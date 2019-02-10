@@ -19,6 +19,7 @@
 		D44950DE220FBE9100CFEDCC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DD220FBE9100CFEDCC /* Post.swift */; };
 		D44950E0220FC14F00CFEDCC /* PostCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DF220FC14F00CFEDCC /* PostCollection.swift */; };
 		D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */; };
+		D44950E4220FDC1200CFEDCC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950E3220FDC1200CFEDCC /* CommentViewController.swift */; };
 		D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4900312220F975E00F0EA35 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		D44950DD220FBE9100CFEDCC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D44950DF220FC14F00CFEDCC /* PostCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollection.swift; sourceTree = "<group>"; };
 		D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D44950E3220FDC1200CFEDCC /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D4900312220F975E00F0EA35 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 			children = (
 				D42B2DD3220E27CB002D3BC4 /* ViewController.swift */,
 				D421EA74220F9077002213B7 /* LoginViewController.swift */,
+				D44950E3220FDC1200CFEDCC /* CommentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44950E4220FDC1200CFEDCC /* CommentViewController.swift in Sources */,
 				D421EA75220F9077002213B7 /* LoginViewController.swift in Sources */,
 				D44950E0220FC14F00CFEDCC /* PostCollection.swift in Sources */,
 				D42B2DD4220E27CB002D3BC4 /* ViewController.swift in Sources */,
