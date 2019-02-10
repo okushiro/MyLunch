@@ -18,6 +18,7 @@
 		D44950DC220FBC2000CFEDCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DB220FBC2000CFEDCC /* User.swift */; };
 		D44950DE220FBE9100CFEDCC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DD220FBE9100CFEDCC /* Post.swift */; };
 		D44950E0220FC14F00CFEDCC /* PostCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DF220FC14F00CFEDCC /* PostCollection.swift */; };
+		D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */; };
 		D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4900312220F975E00F0EA35 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		D44950DB220FBC2000CFEDCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D44950DD220FBE9100CFEDCC /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D44950DF220FC14F00CFEDCC /* PostCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollection.swift; sourceTree = "<group>"; };
+		D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4900312220F975E00F0EA35 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				D42B2DD8220E27CC002D3BC4 /* Assets.xcassets */,
 				D42B2DDA220E27CC002D3BC4 /* LaunchScreen.storyboard */,
 				D42B2DDD220E27CC002D3BC4 /* Info.plist */,
+				D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */,
 			);
 			path = MyLunch;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				D421EA73220EFB28002213B7 /* Login.storyboard in Resources */,
 				D42B2DDC220E27CC002D3BC4 /* LaunchScreen.storyboard in Resources */,
+				D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */,
 				D42B2DD9220E27CC002D3BC4 /* Assets.xcassets in Resources */,
 				D42B2DD7220E27CB002D3BC4 /* Main.storyboard in Resources */,
 			);

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="QSB-EV-gep">
             <objects>
-                <viewController id="vC0-SG-5fK" sceneMemberID="viewController">
+                <viewController id="vC0-SG-5fK" customClass="LoginViewController" customModule="MyLunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dKM-Ee-9ed">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,9 @@
                                         <state key="normal" title="新規登録">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchNewButton:" destination="vC0-SG-5fK" eventType="touchUpInside" id="pWi-u4-Rbs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-vX-tVd">
                                         <rect key="frame" x="120" y="0.0" width="100" height="40"/>
@@ -50,6 +53,9 @@
                                         <state key="normal" title="ログイン">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTouchLoginButton:" destination="vC0-SG-5fK" eventType="touchUpInside" id="lQP-cF-Oai"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -105,6 +111,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3hB-sL-gbg"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="oEt-zN-Dj1" id="t7e-O1-UTW"/>
+                        <outlet property="passwordTextField" destination="SSl-Vz-xmH" id="zmO-iX-O8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmH-UR-dkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

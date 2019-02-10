@@ -10,6 +10,13 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController, UserDelegate {
+
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    let user = User.shared
+    
     //この関数を実装しないといけない（デリゲートのルール）
     func didCreate(error: Error?) {
         if let error = error{
@@ -26,15 +33,6 @@ class LoginViewController: UIViewController, UserDelegate {
         }
         self.presentTaskList()
     }
-    
-    
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    let user = User.shared
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +71,7 @@ class LoginViewController: UIViewController, UserDelegate {
         user.create(email: email, password: password)
         
     }
+    
     
     @IBAction func didTouchLoginButton(_ sender: Any) {
         
