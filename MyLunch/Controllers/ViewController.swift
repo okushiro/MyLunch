@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController, UINavigationControllerDelegate,
 UIImagePickerControllerDelegate {
     
-    var pictureImage : UIImageView!
+    let user = User.shared
+    let userDefaults = UserDefaults.standard
+    var pictureImage : UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,10 @@ UIImagePickerControllerDelegate {
 
     //ログアウトボタン
     @IBAction func didTouchLogoutButton(_ sender: Any) {
+        user.logout()
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     //撮影ボタン
@@ -30,23 +36,22 @@ UIImagePickerControllerDelegate {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
         
-        //撮影終了後
-        func imagePickerController(_ picker: UIImagePickerController,
-                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            //イメージの取得
-            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            //クローズ
-            dismiss(animated:true, completion:nil);
-        }
-        
-        performSegue(withIdentifier: "toComment", sender: nil)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as? CommentViewController
-        let _ = next?.view
-        next?.pictureImage.image = pictureImage.image
+    //撮影終了後
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        //イメージの取得
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            pictureImage = image
+            let pngImageData: Data? = image.pngData()
+            userDefaults.set(pngImageData, forKey: "image")
+            
+            //クローズ
+            dismiss(animated:true, completion:nil)
+            self.performSegue(withIdentifier: "toComment", sender: nil)
+        }
     }
     
     //リストボタン

@@ -21,6 +21,8 @@
 		D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */; };
 		D44950E4220FDC1200CFEDCC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950E3220FDC1200CFEDCC /* CommentViewController.swift */; };
 		D44950E6221032C000CFEDCC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44950E5221032C000CFEDCC /* List.storyboard */; };
+		D44950EA22103E7200CFEDCC /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950E922103E7200CFEDCC /* ListTableViewController.swift */; };
+		D44950EC22103EFF00CFEDCC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950EB22103EFF00CFEDCC /* PostViewController.swift */; };
 		D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4900312220F975E00F0EA35 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D44950E3220FDC1200CFEDCC /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D44950E5221032C000CFEDCC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		D44950E922103E7200CFEDCC /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		D44950EB22103EFF00CFEDCC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		D4900312220F975E00F0EA35 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,8 @@
 				D42B2DD3220E27CB002D3BC4 /* ViewController.swift */,
 				D421EA74220F9077002213B7 /* LoginViewController.swift */,
 				D44950E3220FDC1200CFEDCC /* CommentViewController.swift */,
+				D44950E922103E7200CFEDCC /* ListTableViewController.swift */,
+				D44950EB22103EFF00CFEDCC /* PostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,8 +284,10 @@
 				D421EA75220F9077002213B7 /* LoginViewController.swift in Sources */,
 				D44950E0220FC14F00CFEDCC /* PostCollection.swift in Sources */,
 				D42B2DD4220E27CB002D3BC4 /* ViewController.swift in Sources */,
+				D44950EC22103EFF00CFEDCC /* PostViewController.swift in Sources */,
 				D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */,
 				D44950DE220FBE9100CFEDCC /* Post.swift in Sources */,
+				D44950EA22103E7200CFEDCC /* ListTableViewController.swift in Sources */,
 				D44950DC220FBC2000CFEDCC /* User.swift in Sources */,
 				D42B2DD2220E27CB002D3BC4 /* AppDelegate.swift in Sources */,
 			);

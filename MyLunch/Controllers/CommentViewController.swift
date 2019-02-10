@@ -11,6 +11,10 @@ import UIKit
 class CommentViewController: UIViewController, UINavigationControllerDelegate,
 UIImagePickerControllerDelegate {
     
+    let postCollection = PostCollection.shared
+    let userDefaults = UserDefaults.standard
+    var setImage: UIImage?
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
     @IBOutlet weak var pictureImage: UIImageView!
@@ -18,21 +22,10 @@ UIImagePickerControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        //カメラ呼び出し
-//        let picker = UIImagePickerController()
-//        picker.sourceType = .camera
-//        picker.delegate = self
-//        self.present(picker, animated: true, completion: nil)
-//
-//        //撮影終了後
-//        func imagePickerController(_ picker: UIImagePickerController,
-//                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//            //イメージの取得
-//            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-//            //クローズ
-//            dismiss(animated:true, completion:nil);
-//
-//        }
+        if let pngImageData = userDefaults.data(forKey: "image"){
+            let image = UIImage(data: pngImageData)
+            pictureImage.image = image
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -50,6 +43,19 @@ UIImagePickerControllerDelegate {
     
     
     @IBAction func didTouchSaveButton(_ sender: Any) {
+        guard let title = titleTextField.text else{return}
+        guard let note = noteTextField.text else{return}
+        
+        if (title.isEmpty) {
+            alert("エラー","タイトルを入力して下さい。",nil)
+            return
+        }
+        
+        let post = Post()
+        post.title = title
+        post.note = note
+        postCollection.addPost(post)
+        
         let storyboard = UIStoryboard(name: "List", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ListNavigationController")
         self.present(viewController, animated: true, completion: nil)
