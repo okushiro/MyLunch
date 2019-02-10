@@ -8,14 +8,32 @@
 
 import UIKit
 
-class CommentViewController: UIViewController {
+class CommentViewController: UIViewController, UINavigationControllerDelegate,
+UIImagePickerControllerDelegate {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
+    @IBOutlet weak var pictureImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //カメラ呼び出し
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
 
+        //撮影終了後
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            //イメージの取得
+            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            //クローズ
+            dismiss(animated:true, completion:nil);
+            
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,4 +52,7 @@ class CommentViewController: UIViewController {
     @IBAction func didTouchSaveButton(_ sender: Any) {
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }

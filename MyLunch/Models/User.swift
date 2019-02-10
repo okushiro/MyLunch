@@ -12,6 +12,7 @@ import Firebase
 protocol UserDelegate: class{
     func didCreate(error: Error?)
     func didLogin(error: Error?)
+    func dontLogin()
 }
 
 class User {
@@ -29,7 +30,7 @@ class User {
     }
     
     func create(email:String, password:String){
-        Auth.auth().signIn(withEmail: email, password: password){(result, error) in
+        Auth.auth().createUser(withEmail: email, password: password){(result, error) in
             if let error = error{
                 print("❌" + error.localizedDescription)
             }else{
@@ -44,6 +45,8 @@ class User {
         Auth.auth().signIn(withEmail: email, password: password){(result, error) in
             if let error = error{
                 print("❌" + error.localizedDescription)
+                self.delegate?.dontLogin()
+                
             }else{
                 print("ログイン成功")
                 self.delegate?.didLogin(error: error)

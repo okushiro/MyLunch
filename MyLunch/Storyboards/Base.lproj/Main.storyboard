@@ -22,6 +22,9 @@
                                 <rect key="frame" x="20" y="422" width="335" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="★ 写真を撮る ★"/>
+                                <connections>
+                                    <segue destination="aWP-Fy-FhU" kind="show" id="QxJ-fH-vAC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="わたしのランチ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ws-C3-ihD">
                                 <rect key="frame" x="10" y="194" width="355" height="48"/>
@@ -52,13 +55,10 @@
                     <navigationItem key="navigationItem" id="dW8-Vn-ue0">
                         <barButtonItem key="leftBarButtonItem" title="logout" id="K9w-QS-QbC"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="aWP-Fy-FhU" kind="show" id="ZPH-ZJ-Ey9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+            <point key="canvasLocation" x="1094" y="133"/>
         </scene>
         <!--今日のランチ-->
         <scene sceneID="BXJ-Nl-RLB">
@@ -114,6 +114,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-gC-4Gv">
                                 <rect key="frame" x="37.5" y="312" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="GHB-0U-DJN"/>
                                     <constraint firstAttribute="height" constant="300" id="csr-ez-yYv"/>
@@ -162,6 +163,7 @@
                     <navigationItem key="navigationItem" title="今日のランチ" id="oMq-Dd-jht"/>
                     <connections>
                         <outlet property="noteTextField" destination="o9a-XI-ecK" id="CC6-cJ-mJi"/>
+                        <outlet property="pictureImage" destination="WOU-gC-4Gv" id="tlV-ck-umc"/>
                         <outlet property="titleTextField" destination="iof-Wc-dxX" id="2iA-hg-ACo"/>
                     </connections>
                 </viewController>

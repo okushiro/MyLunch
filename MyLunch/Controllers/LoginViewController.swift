@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, UserDelegate {
             self.alert("エラー", error.localizedDescription, nil)
             return
         }
-        self.presentTaskList()
+        self.presentTitle()
     }
     
     func didLogin(error: Error?) {
@@ -31,7 +31,11 @@ class LoginViewController: UIViewController, UserDelegate {
             self.alert("エラー", error.localizedDescription, nil)
             return
         }
-        self.presentTaskList()
+        self.presentTitle()
+    }
+    
+    func dontLogin() {
+        alert("エラー", "メールアドレスまたはパスワードが間違っています", nil)
     }
     
     override func viewDidLoad() {
@@ -87,16 +91,17 @@ class LoginViewController: UIViewController, UserDelegate {
             return
         }
         
-        user.create(email: email, password: password)
+        user.login(email: email, password: password)
         
     }
     
-    func presentTaskList(){
-        
+    func presentTitle(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
         self.present(viewController, animated: true, completion: nil)
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
