@@ -51,6 +51,9 @@ UIImagePickerControllerDelegate {
     
     //リストボタン
     @IBAction func didTouchListButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "List", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ListNavigationController")
+        self.present(viewController, animated: true, completion: nil)
     }
 }
 

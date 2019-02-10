@@ -50,6 +50,9 @@ UIImagePickerControllerDelegate {
     
     
     @IBAction func didTouchSaveButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "List", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ListNavigationController")
+        self.present(viewController, animated: true, completion: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

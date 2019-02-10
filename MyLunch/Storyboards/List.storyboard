@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--ランチリスト-->
         <scene sceneID="agH-wT-ncf">
             <objects>
                 <tableViewController id="yVe-8S-7gU" sceneMemberID="viewController">
@@ -33,7 +33,9 @@
                             <outlet property="delegate" destination="yVe-8S-7gU" id="HIu-9s-aHT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="osZ-Za-diT"/>
+                    <navigationItem key="navigationItem" title="ランチリスト" id="MFK-SN-N0L">
+                        <barButtonItem key="leftBarButtonItem" title="Title" id="bJI-nF-Z1C"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="mur-lA-6BU" kind="show" id="ETE-fV-MI3"/>
                     </connections>
@@ -66,7 +68,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="コメント" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqd-iQ-I8p">
                                 <rect key="frame" x="20" y="148" width="335" height="100"/>
-                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="LvX-9i-99z"/>
                                 </constraints>
