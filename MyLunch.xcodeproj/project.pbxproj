@@ -20,6 +20,7 @@
 		D44950E0220FC14F00CFEDCC /* PostCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950DF220FC14F00CFEDCC /* PostCollection.swift */; };
 		D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */; };
 		D44950E4220FDC1200CFEDCC /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950E3220FDC1200CFEDCC /* CommentViewController.swift */; };
+		D44950E6221032C000CFEDCC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44950E5221032C000CFEDCC /* List.storyboard */; };
 		D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4900312220F975E00F0EA35 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		D44950DF220FC14F00CFEDCC /* PostCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollection.swift; sourceTree = "<group>"; };
 		D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D44950E3220FDC1200CFEDCC /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		D44950E5221032C000CFEDCC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		D4900312220F975E00F0EA35 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 			children = (
 				D42B2DD5220E27CB002D3BC4 /* Main.storyboard */,
 				D421EA72220EFB28002213B7 /* Login.storyboard */,
+				D44950E5221032C000CFEDCC /* List.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				D42B2DDC220E27CC002D3BC4 /* LaunchScreen.storyboard in Resources */,
 				D44950E2220FD49200CFEDCC /* GoogleService-Info.plist in Resources */,
 				D42B2DD9220E27CC002D3BC4 /* Assets.xcassets in Resources */,
+				D44950E6221032C000CFEDCC /* List.storyboard in Resources */,
 				D42B2DD7220E27CB002D3BC4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

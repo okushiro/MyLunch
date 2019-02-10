@@ -18,21 +18,21 @@ UIImagePickerControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //カメラ呼び出し
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
-
-        //撮影終了後
-        func imagePickerController(_ picker: UIImagePickerController,
-                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            //イメージの取得
-            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            //クローズ
-            dismiss(animated:true, completion:nil);
-            
-        }
+//        //カメラ呼び出し
+//        let picker = UIImagePickerController()
+//        picker.sourceType = .camera
+//        picker.delegate = self
+//        self.present(picker, animated: true, completion: nil)
+//
+//        //撮影終了後
+//        func imagePickerController(_ picker: UIImagePickerController,
+//                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//            //イメージの取得
+//            pictureImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+//            //クローズ
+//            dismiss(animated:true, completion:nil);
+//
+//        }
         
         // Do any additional setup after loading the view.
     }
