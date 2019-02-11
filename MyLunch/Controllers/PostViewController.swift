@@ -15,6 +15,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var commentTextLabel: UITextView!
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var tagLabel: UILabel!
     
     var selectedPost: Post?
     
@@ -24,6 +25,7 @@ class PostViewController: UIViewController {
         guard let selectedPost = self.selectedPost else{return}
         self.titleTextLabel.text = selectedPost.title
         self.commentTextLabel.text = selectedPost.note
+        self.tagLabel.text = selectedPost.label
         let stringImage = selectedPost.image
         if let data = Data(base64Encoded: stringImage) {
             image.image = UIImage(data: data)

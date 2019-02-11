@@ -23,6 +23,7 @@
 		D44950E6221032C000CFEDCC /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44950E5221032C000CFEDCC /* List.storyboard */; };
 		D44950EA22103E7200CFEDCC /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950E922103E7200CFEDCC /* ListTableViewController.swift */; };
 		D44950EC22103EFF00CFEDCC /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44950EB22103EFF00CFEDCC /* PostViewController.swift */; };
+		D44950EE22110B4B00CFEDCC /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D44950ED22110B4B00CFEDCC /* MobileNet.mlmodel */; };
 		D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4900312220F975E00F0EA35 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		D44950E5221032C000CFEDCC /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		D44950E922103E7200CFEDCC /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		D44950EB22103EFF00CFEDCC /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		D44950ED22110B4B00CFEDCC /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		D4900312220F975E00F0EA35 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				D42B2DD1220E27CB002D3BC4 /* AppDelegate.swift */,
 				D42B2DD8220E27CC002D3BC4 /* Assets.xcassets */,
 				D42B2DDA220E27CC002D3BC4 /* LaunchScreen.storyboard */,
+				D44950ED22110B4B00CFEDCC /* MobileNet.mlmodel */,
 				D42B2DDD220E27CC002D3BC4 /* Info.plist */,
 				D44950E1220FD49200CFEDCC /* GoogleService-Info.plist */,
 			);
@@ -288,6 +291,7 @@
 				D4900313220F975E00F0EA35 /* UIViewController.swift in Sources */,
 				D44950DE220FBE9100CFEDCC /* Post.swift in Sources */,
 				D44950EA22103E7200CFEDCC /* ListTableViewController.swift in Sources */,
+				D44950EE22110B4B00CFEDCC /* MobileNet.mlmodel in Sources */,
 				D44950DC220FBC2000CFEDCC /* User.swift in Sources */,
 				D42B2DD2220E27CB002D3BC4 /* AppDelegate.swift in Sources */,
 			);

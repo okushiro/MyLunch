@@ -27,8 +27,6 @@ class CommentViewController: UIViewController {
             pictureImage.image = image
         }
         
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -49,6 +47,10 @@ class CommentViewController: UIViewController {
         guard let note = noteTextField.text else{return}
         guard let imageData = pngImageData else{return}
         let imageDataBase64String = imageData.base64EncodedString()
+        guard let aiLabel: String = userDefaults.object(forKey: "aiLabel") as? String else{
+            return
+        }
+        print(aiLabel)
         
         
         if (title.isEmpty) {
@@ -60,6 +62,7 @@ class CommentViewController: UIViewController {
         post.title = title
         post.note = note
         post.image = imageDataBase64String
+        post.label = aiLabel
         postCollection.addPost(post)
         
         let storyboard = UIStoryboard(name: "List", bundle: nil)

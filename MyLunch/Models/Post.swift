@@ -12,4 +12,5 @@ class Post:Codable {
     var title: String = ""
     var note: String = ""
     var image: String = ""
+    var label: String = ""
 }

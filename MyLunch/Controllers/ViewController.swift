@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import CoreML
+import Vision
 
 class ViewController: UIViewController, UINavigationControllerDelegate,
 UIImagePickerControllerDelegate {
     
     let user = User.shared
     let userDefaults = UserDefaults.standard
-    var pictureImage : UIImage!
+    var model = try! VNCoreMLModel(for: MobileNet().model)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +53,13 @@ UIImagePickerControllerDelegate {
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         image = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-            
-        pictureImage = image
+        
         let pngImageData: Data? = image.pngData()
         userDefaults.set(pngImageData, forKey: "image")
             
         //クローズ
         dismiss(animated:true, completion:nil)
+        predict(image)
         self.performSegue(withIdentifier: "toComment", sender: nil)
         
     }
@@ -67,6 +69,43 @@ UIImagePickerControllerDelegate {
         let storyboard = UIStoryboard(name: "List", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "ListNavigationController")
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    //画像認識
+    func predict(_ image: UIImage) {
+        DispatchQueue.global(qos: .default).async {
+            //リクエストの生成
+            let request = VNCoreMLRequest(model: self.model) {
+                request, error in
+                //エラー処理
+                if error != nil {
+                    self.alert("エラー", "", nil)
+                    return
+                }
+                
+                //検出結果の取得
+                let observations = request.results as! [VNClassificationObservation]
+                let label = observations[0].identifier
+                self.userDefaults.setValue(label, forKey: "aiLabel")
+//                let commentViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommentViewController") as! CommentViewController
+//                commentViewController.aiLabel = label
+            }
+            
+            //入力画像のリサイズ指定
+            request.imageCropAndScaleOption = .centerCrop
+            
+            //UIImageをCIImageに変換
+            let ciImage = CIImage(image: image)!
+            
+            //画像の向きの取得
+            let orientation = CGImagePropertyOrientation(
+                rawValue: UInt32(image.imageOrientation.rawValue))!
+            
+            //ハンドラの生成と実行
+            let handler = VNImageRequestHandler(
+                ciImage: ciImage, orientation: orientation)
+            guard (try? handler.perform([request])) != nil else {return}
+        }
     }
 }
 
