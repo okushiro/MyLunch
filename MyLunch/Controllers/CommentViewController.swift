@@ -8,12 +8,11 @@
 
 import UIKit
 
-class CommentViewController: UIViewController, UINavigationControllerDelegate,
-UIImagePickerControllerDelegate {
+class CommentViewController: UIViewController {
     
     let postCollection = PostCollection.shared
     let userDefaults = UserDefaults.standard
-    var setImage: UIImage?
+    var pngImageData: Data?
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextField: UITextView!
@@ -22,10 +21,13 @@ UIImagePickerControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let pngImageData = userDefaults.data(forKey: "image"){
-            let image = UIImage(data: pngImageData)
+        pngImageData = userDefaults.data(forKey: "image")
+        if let setData = pngImageData{
+            let image = UIImage(data: setData)
             pictureImage.image = image
         }
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -45,6 +47,9 @@ UIImagePickerControllerDelegate {
     @IBAction func didTouchSaveButton(_ sender: Any) {
         guard let title = titleTextField.text else{return}
         guard let note = noteTextField.text else{return}
+        guard let imageData = pngImageData else{return}
+        let imageDataBase64String = imageData.base64EncodedString()
+        
         
         if (title.isEmpty) {
             alert("エラー","タイトルを入力して下さい。",nil)
@@ -54,6 +59,7 @@ UIImagePickerControllerDelegate {
         let post = Post()
         post.title = title
         post.note = note
+        post.image = imageDataBase64String
         postCollection.addPost(post)
         
         let storyboard = UIStoryboard(name: "List", bundle: nil)

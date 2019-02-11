@@ -44,10 +44,6 @@ class PostCollection {
         self.save()
     }
     
-    func editPost () {
-        self.save()
-    }
-    
     func save () {
         // シリアル化
         let data = try! PropertyListEncoder().encode(posts)

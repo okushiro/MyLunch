@@ -21,9 +21,14 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let selectedPost = self.selectedPost{
-            self.titleTextLabel.text = selectedPost.title
-            self.commentTextLabel.text = selectedPost.note
+        guard let selectedPost = self.selectedPost else{return}
+        self.titleTextLabel.text = selectedPost.title
+        self.commentTextLabel.text = selectedPost.note
+        let stringImage = selectedPost.image
+        if let data = Data(base64Encoded: stringImage) {
+            image.image = UIImage(data: data)
+        } else {
+            image.image = nil
         }
 
         // Do any additional setup after loading the view.
