@@ -43,15 +43,23 @@ UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //イメージの取得
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            pictureImage = image
-            let pngImageData: Data? = image.pngData()
-            userDefaults.set(pngImageData, forKey: "image")
+        var image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        //画像向きの補正
+        let size = image.size
+        UIGraphicsBeginImageContext(size)
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
             
-            //クローズ
-            dismiss(animated:true, completion:nil)
-            self.performSegue(withIdentifier: "toComment", sender: nil)
-        }
+        pictureImage = image
+        let pngImageData: Data? = image.pngData()
+        userDefaults.set(pngImageData, forKey: "image")
+            
+        //クローズ
+        dismiss(animated:true, completion:nil)
+        self.performSegue(withIdentifier: "toComment", sender: nil)
+        
     }
     
     //リストボタン
