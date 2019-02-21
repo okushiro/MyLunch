@@ -8,16 +8,34 @@
 
 import UIKit
 import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController, UserDelegate {
+class LoginViewController: UIViewController, UserDelegate, FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print("Error")
+            return
+        }
+        presentTitle()
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
 
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var FBLoginBtn: FBSDKLoginButton!
+    
+    var window: UIWindow?
     let user = User.shared
     
-    //この関数を実装しないといけない（デリゲートのルール）
+    
     func didCreate(error: Error?) {
         if let error = error{
             self.alert("エラー", error.localizedDescription, nil)
@@ -46,6 +64,46 @@ class LoginViewController: UIViewController, UserDelegate {
         // Do any additional setup after loading the view.
     }
     
+    
+    //FB
+    override func viewDidAppear(_ animated: Bool) {
+        // ログイン済みかチェック
+        if let token = FBSDKAccessToken.current() {
+            let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if error != nil {
+                    // ...
+                    return
+                }
+                // ログイン時の処理
+//                self.presentTitle()
+//
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let initialviewController = storyboard.instantiateViewController(withIdentifier: "MainNavigationController")
+//                self.window?.rootViewController = initialviewController
+            }
+            return
+        }
+        // ログインボタン設置
+//        let fbLoginBtn = FBSDKLoginButton()
+        FBLoginBtn.readPermissions = ["public_profile", "email"]
+//        fbLoginBtn.center = self.view.center
+        FBLoginBtn.delegate = self
+//        self.view.addSubview(fbLoginBtn)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+//    @IBAction func logoutButton(_ sender: Any) {
+//        let firebaseAuth = Auth.auth()
+//        do {
+//            try firebaseAuth.signOut()
+//        } catch let signOutError as NSError {
+//            print ("Error signing out: %@", signOutError)
+//        }
+//    }
     
     /*
      // MARK: - Navigation

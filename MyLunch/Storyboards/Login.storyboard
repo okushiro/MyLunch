@@ -64,7 +64,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFG-Tk-9Vo">
-                                <rect key="frame" x="147.5" y="528" width="80" height="40"/>
+                                <rect key="frame" x="147.5" y="578" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Qmk-Ie-E61"/>
                                     <constraint firstAttribute="height" constant="40" id="bEJ-Gv-jYu"/>
@@ -90,13 +90,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEl-tA-iNr" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="77.5" y="508" width="220" height="40"/>
+                                <color key="backgroundColor" red="0.47752970013400248" green="0.61248350150613629" blue="0.99763482809066772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qId-u2-rJN"/>
+                                    <constraint firstAttribute="width" constant="220" id="xNF-Xh-2fJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Facebookでログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1j3-Nu-SLo" firstAttribute="top" secondItem="SSl-Vz-xmH" secondAttribute="bottom" constant="50" id="3Kl-5d-ABq"/>
                             <constraint firstItem="oEt-zN-Dj1" firstAttribute="top" secondItem="mNu-ly-pgV" secondAttribute="bottom" constant="70" id="4Hj-Si-1xB"/>
                             <constraint firstItem="mNu-ly-pgV" firstAttribute="leading" secondItem="3hB-sL-gbg" secondAttribute="leading" constant="10" id="4e6-Xe-CpK"/>
-                            <constraint firstItem="BFG-Tk-9Vo" firstAttribute="top" secondItem="1j3-Nu-SLo" secondAttribute="bottom" constant="50" id="BeA-p1-7sr"/>
+                            <constraint firstItem="bEl-tA-iNr" firstAttribute="top" secondItem="1j3-Nu-SLo" secondAttribute="bottom" constant="30" id="9Eg-rb-BrC"/>
+                            <constraint firstItem="BFG-Tk-9Vo" firstAttribute="top" secondItem="1j3-Nu-SLo" secondAttribute="bottom" constant="100" id="BeA-p1-7sr"/>
                             <constraint firstItem="mNu-ly-pgV" firstAttribute="top" secondItem="3hB-sL-gbg" secondAttribute="top" constant="130" id="O2D-d3-pyS"/>
                             <constraint firstItem="3hB-sL-gbg" firstAttribute="trailing" secondItem="mNu-ly-pgV" secondAttribute="trailing" constant="10" id="YFc-4t-Dj2"/>
                             <constraint firstItem="SSl-Vz-xmH" firstAttribute="top" secondItem="oEt-zN-Dj1" secondAttribute="bottom" constant="40" id="Ytx-LU-Mxy"/>
@@ -104,6 +117,7 @@
                             <constraint firstItem="3hB-sL-gbg" firstAttribute="trailing" secondItem="oEt-zN-Dj1" secondAttribute="trailing" constant="30" id="cOF-so-mhF"/>
                             <constraint firstItem="BFG-Tk-9Vo" firstAttribute="centerX" secondItem="dKM-Ee-9ed" secondAttribute="centerX" id="hod-Ir-Usz"/>
                             <constraint firstItem="3hB-sL-gbg" firstAttribute="trailing" secondItem="SSl-Vz-xmH" secondAttribute="trailing" constant="30" id="pov-Ha-1qT"/>
+                            <constraint firstItem="bEl-tA-iNr" firstAttribute="centerX" secondItem="dKM-Ee-9ed" secondAttribute="centerX" id="rat-al-cWN"/>
                             <constraint firstItem="oEt-zN-Dj1" firstAttribute="centerX" secondItem="dKM-Ee-9ed" secondAttribute="centerX" id="skB-8a-81r"/>
                             <constraint firstItem="1j3-Nu-SLo" firstAttribute="centerX" secondItem="dKM-Ee-9ed" secondAttribute="centerX" id="uug-bo-hjG"/>
                             <constraint firstItem="oEt-zN-Dj1" firstAttribute="leading" secondItem="3hB-sL-gbg" secondAttribute="leading" constant="30" id="xqK-lS-hVf"/>
@@ -112,6 +126,7 @@
                         <viewLayoutGuide key="safeArea" id="3hB-sL-gbg"/>
                     </view>
                     <connections>
+                        <outlet property="FBLoginBtn" destination="bEl-tA-iNr" id="eHP-DH-yHN"/>
                         <outlet property="emailTextField" destination="oEt-zN-Dj1" id="t7e-O1-UTW"/>
                         <outlet property="passwordTextField" destination="SSl-Vz-xmH" id="zmO-iX-O8y"/>
                     </connections>

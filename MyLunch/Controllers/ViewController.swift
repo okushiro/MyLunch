@@ -9,9 +9,20 @@
 import UIKit
 import CoreML
 import Vision
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class ViewController: UIViewController, UINavigationControllerDelegate,
-UIImagePickerControllerDelegate {
+UIImagePickerControllerDelegate, FBSDKLoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
     
     let user = User.shared
     let userDefaults = UserDefaults.standard
